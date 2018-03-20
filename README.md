@@ -1,4 +1,4 @@
-#**************************************Deepscan Network Scanner*********************************************
+**************************************Deepscan Network Scanner*********************************************
 
 Scans the selected network(s) for alive hosts and scans them for open ports. Creates separated text files
 with relevant info and results in a conviniently organized folder tree.
