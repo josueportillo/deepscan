@@ -7,7 +7,7 @@ with relevant info and results in a conviniently organized folder tree.
 
 * v1.1.3
 	- Code improvements
-	- Exit gracefully on menu selection error or blank selections.
+	- WHILE loop for menu until a correct option is selected.
 	- Improved menu, no ENTER needed, just press the option key.
 
 * v1.1.2
