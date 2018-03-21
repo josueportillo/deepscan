@@ -5,7 +5,7 @@ with relevant info and results in a conviniently organized folder tree.
 
 * Release notes:
 
-*v1.1.3
+* v1.1.3
 	- Code improvements
 	- Exit gracefully on menu selection error or blank selections.
 	- Improved menu, no ENTER needed, just press the option key.
