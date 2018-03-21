@@ -126,15 +126,6 @@ if [[ $option = q ]]; then
 	exit 0
 fi
 
-if [[ $option = "" ]]; then
-	echo " "
-	echo "Nothing selected.Quitting..."
-	exit 1
-fi
-echo " "
-echo "Invalid option. Quitting..."
-exit 1
-
 
 #Wrong option selected. Broken, needs some work.
 #if [ $option != [1,2,3] ]; then
