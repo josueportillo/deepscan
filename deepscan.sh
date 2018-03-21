@@ -28,6 +28,9 @@ echo [3] Display README file.
 echo ' '
 echo Please enter your selection and press ENTER:
 read option
+
+#Automatic Scan
+
 if [ $option = 1 ]; then
 #Target name for folder creation
 	echo 'Enter the name of the target:'
@@ -90,7 +93,7 @@ fi
 #Show the README.md file
 if [ $option = 3 ]; then
 	less bash/deepscan/README.md
-	exit 1
+	exit 0
 fi
 
 #Wrong option selected. Broken, needs some work.
