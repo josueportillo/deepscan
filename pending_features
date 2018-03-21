@@ -1,0 +1,7 @@
+* Check creation folder status and create messages for different exit codes.
+* Nmap installation inside the program 
+- use apt for debian / ubuntu 
+- use git for all distros
+- future dependencies inside a folder
+* Installation script + dependencies
+* Logging with timestamps
