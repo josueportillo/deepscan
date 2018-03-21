@@ -35,7 +35,7 @@ echo [2] Manually enter target network.
 echo [3] Display README file.
 echo ' '
 echo [q] Quit.
-echo Please enter your selection and press ENTER:
+echo Please enter your selection:
 read -s -n 1 option
 
 #Automatic Scan
@@ -104,8 +104,7 @@ fi
 #Show the README.md file
 if [[ $option = 3 ]]; then
 	less $HOME/bash/deepscan/README.md
-	$HOME/bash/deepscan/deepscan.sh #testing return to main menu
-	#exit 0
+	exit 0
 fi
 
 #Quit the program
