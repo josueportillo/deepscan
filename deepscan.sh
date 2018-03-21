@@ -1,15 +1,7 @@
 #!/bin/bash
 
-#**************************************Deepscan Network Scanner***********************************************
-#*v1.1                                                                                                       *
-#*Added selection menu for automated scan or manually setting target network.                                *
-#*Added the README.md file, accesible through option 3 of the menu.                                          *
-#*v.1.0                                                                                                      *
-#*Scans the local host for directly connected networks and looks for hosts with open ports in those networks.*
-#*Automatically defines a folder tree for easy use of the results afterwards.                                * 
-#*Requires nmap to be installed. Soon I'll be adding auto-install capabilities for the dependencies.         *
-#*Author: Josue Portillo. 2018.                                                                              *
-#*************************************************************************************************************
+#*****************Deepscan Network Scanner v1.1.3***********************
+#Author: Josue Portillo. 2018.
 
 #Check if the file is being run as root (or with sudo)
 
@@ -21,7 +13,8 @@ fi
 #Check if Nmap is installed
 
 echo "Checking to see if Nmap is installed."
-if [ -a nmap ]; then
+nmap &> /dev/null
+if [ $? = 255 ]; then
         echo "Nmap installed. Good to go."
 else
         echo "Nmap not installed. Please install Nmap and rerun this program."
@@ -33,7 +26,7 @@ fi
 #Selection menu
 
 echo ' '
-echo ******************Deepscan v1.1.2**********************
+echo ******************Deepscan v1.1.3**********************
 echo ' '
 echo Please select the type of scan:
 echo ' '
@@ -43,11 +36,11 @@ echo [3] Display README file.
 echo ' '
 echo [q] Quit.
 echo Please enter your selection and press ENTER:
-read option
+read -s -n 1 option
 
 #Automatic Scan
 
-if [ $option = 1 ]; then
+if [[ $option = 1 ]]; then
 #Target name for folder creation
 	echo 'Enter the name of the target:'
 	read targetname
@@ -77,7 +70,7 @@ fi
 
 #Manual scan
 
-if [ $option = 2 ]; then
+if [[ $option = 2 ]]; then
         echo 'Enter the name of the target:'
         read targetname
 #Enter network range to be scanned
@@ -109,17 +102,27 @@ if [ $option = 2 ]; then
 fi
 
 #Show the README.md file
-if [ $option = 3 ]; then
+if [[ $option = 3 ]]; then
 	less $HOME/bash/deepscan/README.md
 	$HOME/bash/deepscan/deepscan.sh #testing return to main menu
 	#exit 0
 fi
 
 #Quit the program
-if [ $option = q ]; then
+if [[ $option = q ]]; then
 	echo "Bye!"
 	exit 0
 fi
+
+if [[ $option = "" ]]; then
+	echo " "
+	echo "Nothing selected.Quitting..."
+	exit 1
+fi
+echo " "
+echo "Invalid option. Quitting..."
+exit 1
+
 
 #Wrong option selected. Broken, needs some work.
 #if [ $option != [1,2,3] ]; then

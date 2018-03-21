@@ -5,6 +5,11 @@ with relevant info and results in a conviniently organized folder tree.
 
 * Release notes:
 
+*v1.1.3
+	- Code improvements
+	- Exit gracefully on menu selection error or blank selections.
+	- Improved menu, no ENTER needed, just press the option key.
+
 * v1.1.2
 	- Load the $HOME variable as part of the route for folder creation.
 	- Added [q] Quit option, which generates an exit code 0.
