@@ -25,18 +25,31 @@ fi
 
 #Selection menu
 
+option=0
 echo ' '
 echo ******************Deepscan v1.1.3**********************
-echo ' '
-echo Please select the type of scan:
-echo ' '
-echo [1] Automatic [scans all locally connected networks].
-echo [2] Manually enter target network.
-echo [3] Display README file.
-echo ' '
-echo [q] Quit.
-echo Please enter your selection:
-read -s -n 1 option
+while true;  do
+	echo ' '
+	echo Please select the type of scan:
+	echo ' '
+	echo [1] Automatic [scans all locally connected networks].
+	echo [2] Manually enter target network.
+	echo [3] Display README file.
+	echo ' '
+	echo [q] Quit.
+	echo Please enter your selection:
+	read -s -n 1 option
+	if [[ $option =  1 ]]; then
+                break
+        elif [[ $option = 2 ]]; then
+                break
+        elif [[ $option = 3 ]]; then
+                break
+	elif [[ $option = q ]]; then
+		break
+        else echo "Wrong choice. Try again."
+        fi
+done
 
 #Automatic Scan
 
